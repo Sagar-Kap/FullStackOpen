@@ -15,6 +15,6 @@ The exercises are divided into 6 parts:
 
 4. [New Note](0.4-New-Note.md) : Conceptualise the chain of events on submitting the form with data.
 
-5. [Single Page App](https://fullstackopen.com/en/part0/fundamentals_of_web_apps#exercises-0-1-0-6:~:text=0.5%3A%20Single%20page%20app) : Chain of events when user goes to the SPA version of the note app.
+5. [Single Page App](0.5-SPA.md) : Chain of events when user goes to the SPA version of the note app.
 
-6. [New Note in SPA](https://fullstackopen.com/en/part0/fundamentals_of_web_apps#exercises-0-1-0-6:~:text=exampleapp/spa.-,0.6%3A%20New%20note,-Create%20a%20diagram) : Conceptualisation of events when user created new note on SPA version of the note app.
+6. [New Note in SPA](<0.6-New-Note(SPA).md>) : Conceptualisation of events when user created new note on SPA version of the note app.
