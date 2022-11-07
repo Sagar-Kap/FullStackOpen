@@ -6,3 +6,4 @@ The exercises are divided into 3 parts:
 
 1. [course information](/Part1/courseinfo/) : Refractor the app using React components.
 2. [unicafe](/Part1/unicafe/) : Feedback app for customers.
+3. [anecdotes](/Part1/anecdotes/) : Anecdotes app with timesless quotes from the field of software engineering.
