@@ -1,4 +1,4 @@
-# [Part 0- Fundamentals of Web Apps](https://fullstackopen.com/en/part0)
+# [Part 0: Fundamentals of Web Apps](https://fullstackopen.com/en/part0)
 
 This is the beginning part of the course.
 
