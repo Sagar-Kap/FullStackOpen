@@ -9,3 +9,7 @@ body {
   background-color: rgb(51, 83, 83);
   color: white;
 }
+
+.sum {
+  font-weight: bolder;
+}
