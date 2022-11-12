@@ -6,10 +6,15 @@ const App = () => {
 
   const addNote = (event) => {
     event.preventDefault();
-    const newNoteObject = { name: newName, id: persons.length + 1 };
-    setPersons(persons.concat(newNoteObject));
-    setNewName("");
-    console.log(newName);
+
+    if (persons.some((object) => object.name === newName)) {
+      alert(`${newName} is already added to phonebook`);
+      setNewName("");
+    } else {
+      const newNoteObject = { name: newName, id: persons.length + 1 };
+      setPersons(persons.concat(newNoteObject));
+      setNewName("");
+    }
   };
 
   const noteInputChange = (e) => {
