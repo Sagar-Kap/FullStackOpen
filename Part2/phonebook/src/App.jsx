@@ -1,8 +1,22 @@
 import { useState } from "react";
+import Find from "./components/Find";
+import Persons from "./components/Persons";
+import Form from "./components/Form";
 
 const App = () => {
-  const [persons, setPersons] = useState([]);
+  const [persons, setPersons] = useState([
+    { name: "Arto Hellas", number: "040-123456", id: 1 },
+    { name: "Ada Lovelace", number: "39-44-5323523", id: 2 },
+    { name: "Dan Abramov", number: "12-43-234345", id: 3 },
+    { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 },
+  ]);
   const [newName, setNewName] = useState("");
+  const [newNumber, setNewNumber] = useState("");
+  const [query, setQuery] = useState("");
+
+  const findName = (e) => {
+    setQuery(e.target.value);
+  };
 
   const addNote = (event) => {
     event.preventDefault();
@@ -10,40 +24,46 @@ const App = () => {
     if (persons.some((object) => object.name === newName)) {
       alert(`${newName} is already added to phonebook`);
       setNewName("");
+      setNewNumber("");
     } else {
-      const newNoteObject = { name: newName, id: persons.length + 1 };
+      const newNoteObject = {
+        name: newName,
+        number: newNumber,
+        id: persons.length + 1,
+      };
       setPersons(persons.concat(newNoteObject));
       setNewName("");
+      setNewNumber("");
     }
+  };
+
+  const numberChange = (e) => {
+    setNewNumber(e.target.value);
   };
 
   const noteInputChange = (e) => {
     setNewName(e.target.value);
   };
 
-  const NewEntry = ({ persons }) => {
-    const entryArray = persons.map((person) => (
-      <li key={person.id}>{person.name}</li>
-    ));
-    return entryArray;
-  };
-
   return (
     <div>
       <h2>Phonebook</h2>
-      <form>
-        <div>
-          name: <input value={newName} onChange={noteInputChange} />
-        </div>
-        <div>
-          <button onClick={addNote} type="submit">
-            add
-          </button>
-        </div>
-      </form>
+
+      <Find findName={findName} />
+
+      <h2>add a new</h2>
+
+      <Form
+        newName={newName}
+        noteInputChange={noteInputChange}
+        newNumber={newNumber}
+        numberChange={numberChange}
+        addNote={addNote}
+      />
+
       <h2>Numbers</h2>
       <ul>
-        <NewEntry persons={persons} />
+        <Persons persons={persons} query={query} />
       </ul>
     </div>
   );
