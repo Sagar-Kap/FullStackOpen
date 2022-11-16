@@ -2,6 +2,8 @@ import { useState } from "react";
 import Find from "./components/Find";
 import Persons from "./components/Persons";
 import Form from "./components/Form";
+import { useEffect } from "react";
+import axios from "axios";
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -9,10 +11,19 @@ const App = () => {
     { name: "Ada Lovelace", number: "39-44-5323523", id: 2 },
     { name: "Dan Abramov", number: "12-43-234345", id: 3 },
     { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 },
+    { name: "Chirkut", number: "100911", id: 5 },
   ]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    console.log("effect");
+    axios.get("http://localhost:3001/persons").then((response) => {
+      console.log("promise fulfilled");
+      setPersons(response.data);
+    });
+  }, []);
 
   const findName = (e) => {
     setQuery(e.target.value);
