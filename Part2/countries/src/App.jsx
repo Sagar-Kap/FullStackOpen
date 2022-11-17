@@ -9,7 +9,6 @@ function App() {
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      console.log("promise fulfilled");
       setData(response.data);
     });
   }, []);
@@ -33,7 +32,7 @@ function App() {
       <div>
         find countries <input value={findValue} onChange={onFind} />
       </div>
-      <List toShow={toShow} />
+      <List toShow={toShow} setToShow={setToShow} />
     </div>
   );
 }

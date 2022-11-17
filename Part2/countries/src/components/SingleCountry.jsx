@@ -1,6 +1,5 @@
 const SingleCountry = ({ country }) => {
   const lang = Object.values(country.languages);
-  console.log(lang);
   var counter = 0;
 
   return (
