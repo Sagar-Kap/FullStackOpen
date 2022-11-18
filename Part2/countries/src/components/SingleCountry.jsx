@@ -17,7 +17,7 @@ const SingleCountry = ({ country }) => {
           <li key={counter++}>{language}</li>
         ))}
       </ul>
-      <img src={country.flags.png} alt="Country's Flag" />
+      <img src={country.flags.png} alt="Flag of the country" />
       <Weather country={country} />
     </div>
   );
