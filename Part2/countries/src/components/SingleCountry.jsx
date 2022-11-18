@@ -1,3 +1,5 @@
+import Weather from "./Weather";
+
 const SingleCountry = ({ country }) => {
   const lang = Object.values(country.languages);
   var counter = 0;
@@ -7,7 +9,7 @@ const SingleCountry = ({ country }) => {
       <h1>{country.name.common}</h1>
       <div className="primary-info">
         <li>Capital {country.capital[0]}</li>
-        <li>Area {country.area}</li>
+        <li>Area {country.area} km2</li>
       </div>
       <h2>Languages:</h2>
       <ul>
@@ -16,6 +18,7 @@ const SingleCountry = ({ country }) => {
         ))}
       </ul>
       <img src={country.flags.png} alt="Country's Flag" />
+      <Weather country={country} />
     </div>
   );
 };

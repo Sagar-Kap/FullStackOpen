@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        find countries <input value={findValue} onChange={onFind} />
+        Find countries <input value={findValue} onChange={onFind} />
       </div>
       <List toShow={toShow} setToShow={setToShow} />
     </div>
