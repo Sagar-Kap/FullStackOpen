@@ -4,6 +4,7 @@ import Persons from "./components/Persons";
 import Form from "./components/Form";
 import { useEffect } from "react";
 import axios from "axios";
+import services from "./services/addPersons";
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -18,11 +19,7 @@ const App = () => {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    console.log("effect");
-    axios.get("http://localhost:3001/persons").then((response) => {
-      console.log("promise fulfilled");
-      setPersons(response.data);
-    });
+    services.getAll().then((info) => setPersons(info));
   }, []);
 
   const findName = (e) => {
@@ -42,9 +39,12 @@ const App = () => {
         number: newNumber,
         id: persons.length + 1,
       };
-      setPersons(persons.concat(newNoteObject));
-      setNewName("");
-      setNewNumber("");
+
+      services.add(newNoteObject).then((returnValue) => {
+        setPersons(persons.concat(returnValue));
+        setNewName("");
+        setNewNumber("");
+      });
     }
   };
 
