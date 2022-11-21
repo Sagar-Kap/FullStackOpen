@@ -37,7 +37,6 @@ const App = () => {
       const newNoteObject = {
         name: newName,
         number: newNumber,
-        id: persons.length + 1,
       };
 
       services.add(newNoteObject).then((returnValue) => {
@@ -54,6 +53,15 @@ const App = () => {
 
   const noteInputChange = (e) => {
     setNewName(e.target.value);
+  };
+
+  const deleteFunction = (person) => {
+    if (window.confirm(`Delete ${person.name}?`)) {
+      services.deleteValue(person.id);
+
+      const editedArray = persons.filter((chovek) => chovek.id !== person.id);
+      setPersons(editedArray);
+    }
   };
 
   return (
@@ -74,7 +82,11 @@ const App = () => {
 
       <h2>Numbers</h2>
       <ul>
-        <Persons persons={persons} query={query} />
+        <Persons
+          persons={persons}
+          query={query}
+          deleteFunction={deleteFunction}
+        />
       </ul>
     </div>
   );

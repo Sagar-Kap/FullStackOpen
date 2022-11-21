@@ -1,7 +1,8 @@
-const Persons = ({ persons, query }) => {
+const Persons = ({ persons, query, deleteFunction }) => {
   const allArray = persons.map((person) => (
-    <li key={person.id}>
+    <li key={person.name}>
       {person.name} {person.number}
+      <button onClick={() => deleteFunction(person)}>Delete</button>
     </li>
   ));
 
@@ -12,6 +13,7 @@ const Persons = ({ persons, query }) => {
     .map((person) => (
       <li key={person.id}>
         {person.name} {person.number}
+        <button onClick={() => deleteFunction(person)}>Delete</button>
       </li>
     ));
 
