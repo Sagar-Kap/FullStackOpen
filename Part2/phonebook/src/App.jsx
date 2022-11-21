@@ -3,7 +3,6 @@ import Find from "./components/Find";
 import Persons from "./components/Persons";
 import Form from "./components/Form";
 import { useEffect } from "react";
-import axios from "axios";
 import services from "./services/addPersons";
 
 const App = () => {
@@ -28,17 +27,33 @@ const App = () => {
 
   const addNote = (event) => {
     event.preventDefault();
+    const newNoteObject = {
+      name: newName,
+      number: newNumber,
+    };
 
     if (persons.some((object) => object.name === newName)) {
-      alert(`${newName} is already added to phonebook`);
-      setNewName("");
-      setNewNumber("");
-    } else {
-      const newNoteObject = {
-        name: newName,
-        number: newNumber,
-      };
+      const id = persons.find((e) => e.name === newName).id;
 
+      if (
+        window.confirm(
+          `${newName} is already added to phonebook, replace the old number with a new one?`
+        )
+      ) {
+        services.updateValue(id, newNoteObject);
+        const updatedArray = persons.map((mapPerson) => {
+          if (mapPerson.id === id) {
+            return newNoteObject;
+          } else return mapPerson;
+        });
+        setPersons(updatedArray);
+        setNewName("");
+        setNewNumber("");
+      } else {
+        setNewName("");
+        setNewNumber("");
+      }
+    } else {
       services.add(newNoteObject).then((returnValue) => {
         setPersons(persons.concat(returnValue));
         setNewName("");
