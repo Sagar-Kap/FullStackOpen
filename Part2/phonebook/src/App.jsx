@@ -2,6 +2,7 @@ import { useState } from "react";
 import Find from "./components/Find";
 import Persons from "./components/Persons";
 import Form from "./components/Form";
+import Notification from "./components/Notification";
 import { useEffect } from "react";
 import services from "./services/addPersons";
 
@@ -16,6 +17,8 @@ const App = () => {
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [query, setQuery] = useState("");
+  const [notification, setNotification] = useState(null);
+  const [type, setType] = useState("notification");
 
   useEffect(() => {
     services.getAll().then((info) => setPersons(info));
@@ -40,25 +43,42 @@ const App = () => {
           `${newName} is already added to phonebook, replace the old number with a new one?`
         )
       ) {
-        services.updateValue(id, newNoteObject);
+        services.updateValue(id, newNoteObject).catch(() => {
+          setType("error");
+          setNotification(`Information of ${newName} has aleady been removed`);
+          setTimeout(() => {
+            setNotification(null);
+            setType("notification");
+          }, 5000);
+          setPersons(persons.filter((person) => person.name !== newName));
+          return;
+        });
         const updatedArray = persons.map((mapPerson) => {
           if (mapPerson.id === id) {
             return newNoteObject;
           } else return mapPerson;
         });
-        setPersons(updatedArray);
         setNewName("");
         setNewNumber("");
+        setPersons(updatedArray);
       } else {
         setNewName("");
         setNewNumber("");
       }
     } else {
-      services.add(newNoteObject).then((returnValue) => {
-        setPersons(persons.concat(returnValue));
-        setNewName("");
-        setNewNumber("");
-      });
+      services
+        .add(newNoteObject)
+        .then((returnValue) => {
+          setPersons(persons.concat(returnValue));
+          setNewName("");
+          setNewNumber("");
+        })
+        .then(() => {
+          setNotification(`Added ${newName}`);
+          setTimeout(() => {
+            setNotification(null);
+          }, 5000);
+        });
     }
   };
 
@@ -82,10 +102,11 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={notification} type={type} />
 
       <Find findName={findName} />
 
-      <h2>add a new</h2>
+      <h2>Add a new</h2>
 
       <Form
         newName={newName}

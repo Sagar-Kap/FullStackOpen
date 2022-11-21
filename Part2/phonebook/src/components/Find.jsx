@@ -1,7 +1,7 @@
 const Find = ({ findName }) => {
   return (
     <div>
-      filter shown with <input onChange={findName} />
+      Filter shown with <input onChange={findName} />
     </div>
   );
 };
