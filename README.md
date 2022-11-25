@@ -7,6 +7,5 @@ This will be the primary directory for all the exercises in this course. Each pa
 0. [Part 0](/Part0/) - Fundamentals of Web Apps
 1. [Part 1](/Part1/) - Introduction to React
 2. [Part 2](/Part2/) - Communicating with the server
-3. [Part3](/Part3/) - Programming a server with NodeJS and Express
 
 ![Cat reading away calmly](/media/cat.gif)
