@@ -1,5 +1,5 @@
-# Phone Book app
+### Back end for Phonebook app
 
-[You can access this website from this link.](https://phonebook-nampatri.netlify.app/)
+This is the backend for the Part2 phonebook exercise of the FSO.
 
-This is a simple phone book app for the exercises in Part 2, exercises 2.6 onwards.
+The app can be accessed through [this link](https://phonebook-backend-service.fly.dev/)
