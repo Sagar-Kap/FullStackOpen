@@ -2,11 +2,14 @@ const { request, response } = require("express");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const cors = require("cors");
 
 morgan.token("postInfo", (request) => {
   return request.method === "POST" ? JSON.stringify(request.body) : null;
 });
 
+app.use(cors());
+app.use(express.static("build"));
 app.use(express.json());
 app.use(
   morgan(
@@ -48,8 +51,10 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const PORT = 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 app.get("/api/persons", (request, response) => {
   response.json(data);
