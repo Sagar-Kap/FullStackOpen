@@ -1,7 +1,18 @@
 const { request, response } = require("express");
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
+
+morgan.token("postInfo", (request) => {
+  return request.method === "POST" ? JSON.stringify(request.body) : null;
+});
+
 app.use(express.json());
+app.use(
+  morgan(
+    ":method :url :status :res[content-length] - :response-time ms :postInfo"
+  )
+);
 
 let data = [
   {
@@ -70,13 +81,11 @@ app.delete("/api/persons/:id", (request, response) => {
 
 app.post("/api/persons/", (request, response) => {
   const id = getRandomInt(10, 10000);
-  console.log(id);
   const body = request.body;
 
   if (body.name && body.number) {
     if (data.find((person) => person.name === body.name)) {
       response.status(404).send({ error: "Name must be unique" });
-      console.log(data.map((person) => person.name === body.name));
     } else {
       const person = {
         name: body.name,
