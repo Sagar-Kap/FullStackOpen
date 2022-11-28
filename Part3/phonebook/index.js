@@ -1,8 +1,9 @@
-const { request, response } = require("express");
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
+const Person = require("./models/person");
 
 morgan.token("postInfo", (request) => {
   return request.method === "POST" ? JSON.stringify(request.body) : null;
@@ -57,7 +58,9 @@ app.listen(PORT, () => {
 });
 
 app.get("/api/persons", (request, response) => {
-  response.json(data);
+  Person.find({}).then((people) => {
+    response.json(people);
+  });
 });
 
 app.get("/api/persons/info", (request, response) => {
@@ -69,13 +72,9 @@ app.get("/api/persons/info", (request, response) => {
 });
 
 app.get("/api/persons/:id", (request, response) => {
-  const id = Number(request.params.id);
-  const person = data.find((person) => person.id === id);
-  if (person) {
-    response.json(person);
-  } else {
-    response.status(404).end();
-  }
+  Person.findById(request.params.id).then((note) => {
+    response.json(note);
+  });
 });
 
 app.delete("/api/persons/:id", (request, response) => {
@@ -85,24 +84,18 @@ app.delete("/api/persons/:id", (request, response) => {
 });
 
 app.post("/api/persons/", (request, response) => {
-  const id = getRandomInt(10, 10000);
   const body = request.body;
 
-  if (body.name && body.number) {
-    if (data.find((person) => person.name === body.name)) {
-      response.status(404).send({ error: "Name must be unique" });
-    } else {
-      const person = {
-        name: body.name,
-        number: body.number,
-        id: id,
-      };
-      data = data.concat(person);
-      response.json(person);
-    }
-  } else {
-    response
-      .status(404)
-      .send({ error: "Values must be added to both name and number" });
+  if (body.name === undefined) {
+    return response.status(400).json({ error: "Content missing" });
   }
+
+  const person = new Person({
+    name: body.name,
+    number: body.number,
+  });
+
+  person.save().then((savedPerson) => {
+    response.json(savedPerson);
+  });
 });

@@ -6,11 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd ../FullStackOpen/Part2/phonebook/ && npm run build && cp -r build ../../../node-server-phonebook",
-    "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -28,7 +24,9 @@
   "homepage": "https://github.com/Sagar-Kap/node-server-phonebook#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mongoose": "^6.7.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
