@@ -83,7 +83,7 @@ const App = () => {
   };
 
   const numberChange = (e) => {
-    setNewNumber(e.target.value);
+    setNewNumber(e.target.value.replace(/\D/, ""));
   };
 
   const noteInputChange = (e) => {
@@ -96,6 +96,7 @@ const App = () => {
 
       const editedArray = persons.filter((chovek) => chovek.id !== person.id);
       setPersons(editedArray);
+      setQuery("");
     }
   };
 
@@ -104,7 +105,7 @@ const App = () => {
       <h2>Phonebook</h2>
       <Notification message={notification} type={type} />
 
-      <Find findName={findName} />
+      <Find findName={findName} query={query} />
 
       <h2>Add a new</h2>
 

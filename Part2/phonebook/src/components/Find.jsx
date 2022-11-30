@@ -1,7 +1,7 @@
-const Find = ({ findName }) => {
+const Find = ({ findName, query }) => {
   return (
     <div>
-      Filter shown with <input onChange={findName} />
+      Filter shown with <input value={query} onChange={findName} />
     </div>
   );
 };

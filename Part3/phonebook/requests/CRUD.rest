@@ -1,8 +1,22 @@
-GET http://localhost:3001/api/persons
-
+GET http://localhost:3000/api/persons
 
 ###
-POST http://localhost:3001/api/persons
+GET http://localhost:3000/api/person/63846590af988c6b00313ad7
+
+###
+GET http://localhost:3000/api/persons/info
+
+###
+PUT http://localhost:3000/api/person/6384536ef3cf206c9b09b137
+Content-Type: application/json
+
+{
+    "name": "Kurtosho",
+    "number": "1000"
+}
+
+###
+POST http://localhost:3000/api/persons
 Content-Type: application/json
 
 {
@@ -11,4 +25,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/api/persons/1
+DELETE http://localhost:3000/api/person/6384531287118e5d20aa7672
