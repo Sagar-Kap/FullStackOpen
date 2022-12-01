@@ -6,30 +6,12 @@ console.log("Connecting to ", url);
 
 mongoose
   .connect(url)
-  .then((result) => {
+  .then(() => {
     console.log("Connected to MongoDB");
   })
   .catch((error) => {
     console.log("Error connecting to MongoDB", error.message);
   });
-
-const validateNum = [
-  {
-    validator: (number) => {
-      if ((number[2] === "-" || number[3] === "-") && number.length < 9) {
-        return false;
-      }
-      return true;
-    },
-    msg: "must be at least 8 digits",
-  },
-  {
-    validator: (number) => {
-      return /^\d{2,3}-\d+$/.test(number);
-    },
-    msg: "invalid phone number",
-  },
-];
 
 const personSchema = new mongoose.Schema({
   name: {
@@ -38,8 +20,15 @@ const personSchema = new mongoose.Schema({
     required: true,
   },
   number: {
-    type: Number,
-    validate: validateNum,
+    type: String,
+    validate: {
+      validator: (number) => {
+        return /^(\d{2,3}-)?\d{7,}$/.test(number);
+      },
+      message: "Invalid Phone number",
+    },
+    minlength: 8,
+    message: "Phone number less than 8.",
     required: true,
   },
 });

@@ -19,7 +19,7 @@ if (process.argv.length < 3) {
   );
   process.exit(1);
 } else if (process.argv.length === 3) {
-  mongoose.connect(url).then((result) => {
+  mongoose.connect(url).then(() => {
     Person.find({})
       .then((result) => {
         result.forEach((person) => {
@@ -35,7 +35,7 @@ if (process.argv.length < 3) {
 } else if (process.argv.length === 5) {
   mongoose
     .connect(url)
-    .then((result) => {
+    .then(() => {
       console.log("connected");
       const person = new Person({
         name: name,
