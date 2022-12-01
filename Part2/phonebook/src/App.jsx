@@ -28,7 +28,7 @@ const App = () => {
     setQuery(e.target.value);
   };
 
-  const addNote = (event) => {
+  const addPerson = (event) => {
     event.preventDefault();
     const newNoteObject = {
       name: newName,
@@ -62,7 +62,6 @@ const App = () => {
         setNewNumber("");
         setPersons(updatedArray);
       } else {
-        setNewName("");
         setNewNumber("");
       }
     } else {
@@ -78,12 +77,22 @@ const App = () => {
           setTimeout(() => {
             setNotification(null);
           }, 5000);
+        })
+        .catch((error) => {
+          setNotification(error.response.data.error);
+          setType("error");
+          setNewNumber("");
+          setTimeout(() => {
+            setNotification(null);
+            setNewNumber("");
+            setType("notification");
+          }, 5000);
         });
     }
   };
 
   const numberChange = (e) => {
-    setNewNumber(e.target.value.replace(/\D/, ""));
+    setNewNumber(e.target.value);
   };
 
   const noteInputChange = (e) => {
@@ -114,7 +123,7 @@ const App = () => {
         noteInputChange={noteInputChange}
         newNumber={newNumber}
         numberChange={numberChange}
-        addNote={addNote}
+        addPerson={addPerson}
       />
 
       <h2>Numbers</h2>

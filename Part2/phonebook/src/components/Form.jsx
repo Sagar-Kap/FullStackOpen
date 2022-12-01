@@ -8,8 +8,8 @@ const Form = (props) => {
         Number: <input value={props.newNumber} onChange={props.numberChange} />
       </div>
       <div>
-        <button onClick={props.addNote} type="submit">
-          add
+        <button onClick={props.addPerson} type="submit">
+          Add
         </button>
       </div>
     </form>
