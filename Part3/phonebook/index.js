@@ -4,7 +4,7 @@ const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 const Person = require("./models/person");
-const { request, response } = require("express");
+const { query } = require("express");
 
 morgan.token("postInfo", (request) => {
   return request.method === "POST" ? JSON.stringify(request.body) : null;
@@ -31,9 +31,13 @@ app.get("/api/persons", (request, response) => {
 });
 
 app.get("/api/persons/info", (request, response) => {
-  response.send(
-    `<h2>Phonebook has info for <Please add Value here>people</h2><h2>${new Date()}</h2>`
-  );
+  Person.find({}).then((people) => {
+    response.send(
+      `<h2>Phonebook has info for ${
+        people.length
+      } people</h2><h2>${new Date()}</h2>`
+    );
+  });
 });
 
 app.get("/api/persons/:id", (request, response) => {
@@ -59,27 +63,30 @@ app.delete("/api/persons/:id", (request, response, next) => {
     .catch((error) => next(error));
 });
 
-app.post("/api/persons/", (request, response) => {
+app.post("/api/persons/", (request, response, next) => {
   const body = request.body;
-
-  if (body.name === undefined) {
-    return response.status(400).json({ error: "Content missing" });
-  }
 
   const person = new Person({
     name: body.name,
     number: body.number,
   });
 
-  person.save().then((savedPerson) => {
-    response.json(savedPerson);
-  });
+  person
+    .save()
+    .then((savedPerson) => {
+      response.json(savedPerson);
+    })
+    .catch((error) => next(error));
 });
 
 app.put("/api/persons/:id", (request, response, next) => {
   const { name, number } = request.body;
 
-  Person.findByIdAndUpdate(request.params.id, { name, number })
+  Person.findByIdAndUpdate(
+    request.params.id,
+    { name, number },
+    { new: true, runValidators: true, context: query }
+  )
     .then((updatedPerson) => {
       response.json(updatedPerson);
     })
@@ -97,6 +104,8 @@ const errorHandler = (error, request, response, next) => {
 
   if (error.name === "CastError") {
     return response.status(400).send({ error: "malformatted id" });
+  } else if (error.name === "ValidationError") {
+    return response.status(400).json({ error: error.message });
   }
   next(error);
 };

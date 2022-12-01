@@ -7,11 +7,11 @@ GET http://localhost:3000/api/person/63846590af988c6b00313ad7
 GET http://localhost:3000/api/persons/info
 
 ###
-PUT http://localhost:3000/api/person/6384536ef3cf206c9b09b137
+PUT http://localhost:3000/api/persons/638735201f39f8b0287ae40d
 Content-Type: application/json
 
 {
-    "name": "Kurtosho",
+    "name": "Koshe",
     "number": "1000"
 }
 
@@ -20,7 +20,7 @@ POST http://localhost:3000/api/persons
 Content-Type: application/json
 
 {
-    "name": "Hj Gun Murgan",
+    "name": "Rambo Uncle",
     "number": "98114545911"
 }
 
