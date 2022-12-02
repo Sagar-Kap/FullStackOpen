@@ -35,32 +35,53 @@ const App = () => {
       number: newNumber,
     };
 
-    if (persons.some((object) => object.name === newName)) {
-      const id = persons.find((e) => e.name === newName).id;
+    if (
+      persons.some(
+        (object) => object.name.toLowerCase() === newName.toLowerCase()
+      )
+    ) {
+      const id = persons.find(
+        (e) => e.name.toLowerCase() === newName.toLocaleLowerCase()
+      ).id;
+      console.log(id);
 
       if (
         window.confirm(
           `${newName} is already added to phonebook, replace the old number with a new one?`
         )
       ) {
-        services.updateValue(id, newNoteObject).catch(() => {
-          setType("error");
-          setNotification(`Information of ${newName} has aleady been removed`);
-          setTimeout(() => {
-            setNotification(null);
-            setType("notification");
-          }, 5000);
-          setPersons(persons.filter((person) => person.name !== newName));
-          return;
-        });
-        const updatedArray = persons.map((mapPerson) => {
-          if (mapPerson.id === id) {
-            return newNoteObject;
-          } else return mapPerson;
-        });
-        setNewName("");
-        setNewNumber("");
-        setPersons(updatedArray);
+        services
+          .updateValue(id, newNoteObject)
+          .then(() => {
+            const updatedArray = persons.map((mapPerson) => {
+              if (mapPerson.id === id) {
+                return {
+                  name: newNoteObject.name,
+                  number: newNoteObject.number,
+                  id: id,
+                };
+              } else {
+                return mapPerson;
+              }
+            });
+            setNewName("");
+            setNewNumber("");
+            setPersons(updatedArray);
+            setNotification(`Added ${newName}`);
+            setTimeout(() => {
+              setNotification(null);
+            }, 5000);
+          })
+          .catch((error) => {
+            setNewName("");
+            setNewNumber("");
+            setType("error");
+            setNotification(error.response.data.error);
+            setTimeout(() => {
+              setNotification(null);
+              setType("notification");
+            }, 5000);
+          });
       } else {
         setNewNumber("");
       }
