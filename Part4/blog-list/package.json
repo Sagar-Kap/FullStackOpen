@@ -4,8 +4,9 @@
   "description": "Backend for Blogs List Part4 of FSO.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint ."
   },
   "repository": {
@@ -20,12 +21,18 @@
   "homepage": "https://github.com/Sagar-Kap/blogs-list#readme",
   "devDependencies": {
     "eslint": "^8.29.0",
-    "nodemon": "^2.0.20"
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "lodash": "^4.17.21",
     "mongoose": "^6.8.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

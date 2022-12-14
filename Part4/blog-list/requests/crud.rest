@@ -5,8 +5,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Yu mare tumhe?",
-    "author" : "Lala Ram",
-    "url": "lolmarolala.com/ghochu",
-    "likes": "70"
+    "title": "Kya mare tumhe?",
+    "author" : "Ram",
+    "url": "loarolala.com/ghochu",
+    "likes": "7"
 }
