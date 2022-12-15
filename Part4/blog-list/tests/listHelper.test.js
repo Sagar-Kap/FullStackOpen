@@ -1,4 +1,5 @@
 const listHelper = require("../utils/list_helper");
+const Blog = require("../models/blog");
 
 const listWithOneBlog = [
   {
@@ -135,7 +136,7 @@ describe("The most likes received", () => {
     });
   });
 
-  test("The most likes received with sonme blogs", () => {
+  test("The most likes received with some blogs", () => {
     const result = listHelper.mostLikes(blogs);
     expect(result).toEqual({
       author: "Edsger W. Dijkstra",
@@ -143,3 +144,13 @@ describe("The most likes received", () => {
     });
   });
 });
+
+const blogsDb = async () => {
+  const blogs = await Blog.find({});
+  return blogs.map((blog) => blog.toJSON());
+};
+
+module.exports = {
+  blogs,
+  blogsDb,
+};
