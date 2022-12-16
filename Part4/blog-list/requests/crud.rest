@@ -10,3 +10,17 @@ Content-Type: application/json
     "url": "loarolala.com/ghochu",
     "likes": "77"
 }
+
+###
+DELETE http://localhost:3003/api/blogs/63920908f61be56b2db568e5
+
+###
+GET http://localhost:3003/api/blogs/639acbd402f6622dd6b11d4b
+
+###
+PUT http://localhost:3003/api/blogs/639acbd402f6622dd6b11d4b
+Content-Type: application/json
+
+{
+    "likes" : "100"
+}
