@@ -1,5 +1,6 @@
 const listHelper = require("../utils/list_helper");
 const Blog = require("../models/blog");
+const user = require("../models/user");
 
 const listWithOneBlog = [
   {
@@ -150,7 +151,13 @@ const blogsDb = async () => {
   return blogs.map((blog) => blog.toJSON());
 };
 
+const usersInDb = async () => {
+  const users = await user.find({});
+  return users.map((user) => user.toJSON());
+};
+
 module.exports = {
   blogs,
   blogsDb,
+  usersInDb,
 };

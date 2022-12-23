@@ -7,6 +7,7 @@ const middleware = require("./utils/middleware");
 require("express-async-errors");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
+const userRouter = require("./controllers/users");
 
 logger.info("Connecting to", config.MONGODB_URI);
 
@@ -23,6 +24,7 @@ app.use(cors());
 app.use(express.json());
 app.use(middleware.requestLogger);
 
+app.use("/api/users", userRouter);
 app.use("/api/blogs", blogsRouter);
 
 app.use(middleware.unknownEndpoint);

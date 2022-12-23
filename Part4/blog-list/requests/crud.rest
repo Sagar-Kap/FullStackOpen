@@ -5,10 +5,11 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Bau mushaye tumhe?",
-    "author" : "Ram",
-    "url": "loarolala.com/ghochu",
-    "likes": "77"
+    "title": "Bau muumhe?",
+    "author" : "Rajkjkjm",
+    "url": "loarolaljkjka.com/ghochu",
+    "likes": "787",
+    "userId": "63a28c0ce33830daf6b002c3"
 }
 
 ###
@@ -24,3 +25,16 @@ Content-Type: application/json
 {
     "likes" : "100"
 }
+
+###
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username" : "Mswda",
+    "name" : "Rasdasdja",
+    "password" : "lalaRaja"
+}
+
+###
+GET http://localhost:3003/api/users
