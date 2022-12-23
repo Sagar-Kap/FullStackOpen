@@ -38,3 +38,12 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3003/api/users
+
+###
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+    "username" : "Mswda",
+    "password" : "lalaRaja"
+}
