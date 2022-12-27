@@ -1,6 +1,25 @@
 const bcrypt = require("bcrypt");
 const userRouter = require("express").Router();
 const User = require("../models/user");
+const mongoose = require("mongoose");
+
+userRouter.get("/:id", async (request, response) => {
+  if (!mongoose.Types.ObjectId.isValid(request.params.id)) {
+    return response.status(400).json({ error: "invalid ID" });
+  }
+  const user = await User.findById(request.params.id).populate("blogs", {
+    title: 1,
+    author: 1,
+    url: 1,
+    id: 1,
+  });
+
+  if (user) {
+    response.json(user.toJSON());
+  } else {
+    response.status(404).end();
+  }
+});
 
 userRouter.post("/", async (request, response) => {
   const { username, name, password } = request.body;
