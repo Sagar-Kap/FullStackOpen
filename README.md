@@ -9,5 +9,6 @@ This will be the primary directory for all the exercises in this course. Each pa
 2. [Part 2](/Part2/) - Communicating with the server
 3. [Part3](/Part3/) - Programming a server with NodeJS and Express
 4. [Part4](/Part4/) - Testing Express servers, user administration
+5. [Part5](/Part5/) - Testing React apps
 
 ![Cat reading away calmly](/media/cat.gif)
