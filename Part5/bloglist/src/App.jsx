@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Blog from "./components/Blog";
+import BlogForm from "./components/BlogForm";
 import LoginForm from "./components/LoginForm";
 import Notification from "./components/Notification";
 import blogService from "./services/blogs";
@@ -53,18 +54,43 @@ const App = () => {
     setUser(null);
   };
 
+  const createBlog = async (title, author, url) => {
+    try {
+      const blog = await blogService.create({
+        title,
+        author,
+        url,
+      });
+      setBlogs(blogs.concat(blog));
+      setType("green");
+      setMessage(`A new blog ${title} by ${author} added`);
+      setTimeout(() => {
+        setMessage("");
+        setType("");
+      }, 5000);
+    } catch (error) {
+      setType("red");
+      setMessage(`Error ${error.response.data.error}!`);
+      setTimeout(() => {
+        setMessage("");
+        setType("");
+      }, 5000);
+    }
+  };
+
   return (
     <div>
+      {user === null ? null : <h1>Blogs</h1>}
       <Notification type={type} message={message} />
       {user === null ? (
         <LoginForm handleLogin={handleLogin} />
       ) : (
         <div>
-          <h1>Blogs</h1>
           <h3>
             {user.name} logged in.{" "}
             <button onClick={handleLogout}>Logout</button>
           </h3>
+          <BlogForm createBlog={createBlog} />
           {blogs.map((blog) => {
             return <Blog key={blog.id} blog={blog} />;
           })}
