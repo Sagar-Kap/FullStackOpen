@@ -15,10 +15,20 @@ const App = () => {
     blogService.getAll().then((blogs) => setBlogs(blogs));
   }, []);
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedBlogAppUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+      blogService.setToken(user.token);
+    }
+  }, []);
+
   const handleLogin = async (username, password) => {
     try {
       const user = await loginService.login({ username, password });
       window.localStorage.setItem("loggedBlogAppUser", JSON.stringify(user));
+      blogService.setToken(user.token);
       setUser(user);
       setType("green");
       setMessage("Log In Successful!");
@@ -26,7 +36,7 @@ const App = () => {
       setTimeout(() => {
         setType("");
         setMessage("");
-      }, 5000);
+      }, 2000);
     } catch (error) {
       setType("red");
       setMessage("Wrong Credentials");
@@ -38,6 +48,11 @@ const App = () => {
     }
   };
 
+  const handleLogout = () => {
+    window.localStorage.clear();
+    setUser(null);
+  };
+
   return (
     <div>
       <Notification type={type} message={message} />
@@ -46,7 +61,10 @@ const App = () => {
       ) : (
         <div>
           <h1>Blogs</h1>
-          <h3>{user.name} logged in.</h3>
+          <h3>
+            {user.name} logged in.{" "}
+            <button onClick={handleLogout}>Logout</button>
+          </h3>
           {blogs.map((blog) => {
             return <Blog key={blog.id} blog={blog} />;
           })}

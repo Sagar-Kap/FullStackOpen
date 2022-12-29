@@ -9,7 +9,6 @@ const LoginForm = ({ handleLogin }) => {
     handleLogin(username, password);
     setPassword("");
     setUsername("");
-    console.log("Logging in with ", username, password);
   };
 
   return (
