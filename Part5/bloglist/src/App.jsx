@@ -98,6 +98,23 @@ const App = () => {
     }
   };
 
+  const deleteBlog = async (blogId) => {
+    try {
+      await blogService.remove(blogId);
+
+      const updatedBlogs = blogs.filter((blog) => blog.id !== blogId);
+      setBlogs(updatedBlogs);
+    } catch (exception) {
+      setType("red");
+      console.log(exception);
+      setMessage(exception.message);
+      setTimeout(() => {
+        setMessage("");
+        setType("");
+      }, 5000);
+    }
+  };
+
   const blogFormRef = useRef();
 
   return (
@@ -115,9 +132,19 @@ const App = () => {
           <Togglable buttonLabel="New Blog" ref={blogFormRef}>
             <BlogForm createBlog={createBlog} />
           </Togglable>
-          {blogs.map((blog) => {
-            return <Blog key={blog.id} blog={blog} updateLike={updateLike} />;
-          })}
+          {blogs
+            .sort((a, b) => b.likes - a.likes)
+            .map((blog) => {
+              return (
+                <Blog
+                  key={blog.id}
+                  blog={blog}
+                  updateLike={updateLike}
+                  deleteBlog={deleteBlog}
+                  username={user.username}
+                />
+              );
+            })}
         </div>
       )}
     </div>
