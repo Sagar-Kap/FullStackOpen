@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Blog from "./components/Blog";
 import BlogForm from "./components/BlogForm";
 import LoginForm from "./components/LoginForm";
 import Notification from "./components/Notification";
+import Togglable from "./components/Togglable";
 import blogService from "./services/blogs";
 import loginService from "./services/login";
 
@@ -56,6 +57,7 @@ const App = () => {
 
   const createBlog = async (title, author, url) => {
     try {
+      blogFormRef.current.toggleVisibility();
       const blog = await blogService.create({
         title,
         author,
@@ -70,13 +72,15 @@ const App = () => {
       }, 5000);
     } catch (error) {
       setType("red");
-      setMessage(`Error ${error.response.data.error}!`);
+      setMessage(`Error in creating the blog!`);
       setTimeout(() => {
         setMessage("");
         setType("");
       }, 5000);
     }
   };
+
+  const blogFormRef = useRef();
 
   return (
     <div>
@@ -90,7 +94,9 @@ const App = () => {
             {user.name} logged in.{" "}
             <button onClick={handleLogout}>Logout</button>
           </h3>
-          <BlogForm createBlog={createBlog} />
+          <Togglable buttonLabel="New Blog" ref={blogFormRef}>
+            <BlogForm createBlog={createBlog} />
+          </Togglable>
           {blogs.map((blog) => {
             return <Blog key={blog.id} blog={blog} />;
           })}
