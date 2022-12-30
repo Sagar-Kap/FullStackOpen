@@ -80,6 +80,24 @@ const App = () => {
     }
   };
 
+  const updateLike = async (id, blogToUpdate) => {
+    try {
+      const updatedBlog = await blogService.update(id, blogToUpdate);
+
+      const newBlog = blogs.map((blog) =>
+        blog.id === id ? updatedBlog : blog
+      );
+      setBlogs(newBlog);
+    } catch (exception) {
+      setType("red");
+      setMessage("Error! Unable to update like.");
+      setTimeout(() => {
+        setType("");
+        setMessage("");
+      }, 5000);
+    }
+  };
+
   const blogFormRef = useRef();
 
   return (
@@ -98,7 +116,7 @@ const App = () => {
             <BlogForm createBlog={createBlog} />
           </Togglable>
           {blogs.map((blog) => {
-            return <Blog key={blog.id} blog={blog} />;
+            return <Blog key={blog.id} blog={blog} updateLike={updateLike} />;
           })}
         </div>
       )}

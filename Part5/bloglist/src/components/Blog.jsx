@@ -1,9 +1,21 @@
 import { useState } from "react";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, updateLike }) => {
   const [visible, setVisible] = useState(false);
   const onClick = () => {
     setVisible(!visible);
+  };
+
+  const handleLike = () => {
+    const blogToUpdate = {
+      title: blog.title,
+      author: blog.author,
+      url: blog.url,
+      likes: blog.likes + 1,
+      user: blog.user,
+    };
+
+    updateLike(blog.id, blogToUpdate);
   };
 
   return (
@@ -13,7 +25,9 @@ const Blog = ({ blog }) => {
       {visible && (
         <div>
           <div>{blog.url}</div>
-          <div>{blog.likes}</div>
+          <div>
+            Likes: {blog.likes} <button onClick={handleLike}>Like</button>
+          </div>
           <div>{blog.user.name}</div>
         </div>
       )}
