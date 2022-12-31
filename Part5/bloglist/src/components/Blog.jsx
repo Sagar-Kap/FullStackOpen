@@ -25,18 +25,23 @@ const Blog = ({ blog, updateLike, deleteBlog, username }) => {
   };
 
   return (
-    <div>
-      {blog.title} - {blog.author}{" "}
-      <button onClick={onClick}>{visible ? "hide" : "show"}</button>
+    <div className="blog">
+      <div className="first-line">
+        {blog.title} {visible ? "" : ` - ${blog.author}`}{" "}
+        <button onClick={onClick}>{visible ? "Hide" : "Show"}</button>
+      </div>
       {visible && (
-        <div>
-          <div>{blog.url}</div>
+        <div className="bottom-box">
+          <div>Author: {blog.author}</div>
+          <div>URL: {blog.url}</div>
           <div>
-            Likes: {blog.likes} <button onClick={handleLike}>Like</button>
+            Likes: {blog.likes} <button onClick={handleLike}>👍</button>
           </div>
-          <div>{blog.user.name}</div>
+          <div>User: {blog.user.name}</div>
           {blog.user.username === username && (
-            <button onClick={handleDelete}>Remove</button>
+            <button className="remove" onClick={handleDelete}>
+              Remove
+            </button>
           )}
         </div>
       )}

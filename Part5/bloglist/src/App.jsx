@@ -72,7 +72,7 @@ const App = () => {
       }, 5000);
     } catch (error) {
       setType("red");
-      setMessage(`Error in creating the blog!`);
+      setMessage("Error in creating the blog!");
       setTimeout(() => {
         setMessage("");
         setType("");
@@ -119,7 +119,7 @@ const App = () => {
 
   return (
     <div>
-      {user === null ? null : <h1>Blogs</h1>}
+      {user === null ? null : <h1 className="heading">Blogs</h1>}
       <Notification type={type} message={message} />
       {user === null ? (
         <LoginForm handleLogin={handleLogin} />
