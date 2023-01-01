@@ -18,46 +18,48 @@ const BlogForm = ({ createBlog }) => {
     <div className="new-blog">
       <form onSubmit={onSubmit}>
         <table>
-          <tr>
-            <td>Title</td>
-            <td>
-              <input
-                type="text"
-                name="title"
-                value={newBlog.title}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Author</td>
-            <td>
-              <input
-                type="text"
-                name="author"
-                value={newBlog.author}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>URL</td>
-            <td>
-              <input
-                type="text"
-                name="url"
-                value={newBlog.url}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <button className="submit" type="submit">
-                Create
-              </button>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Title</td>
+              <td>
+                <input
+                  type="text"
+                  name="title"
+                  value={newBlog.title}
+                  onChange={handleInputChange}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Author</td>
+              <td>
+                <input
+                  type="text"
+                  name="author"
+                  value={newBlog.author}
+                  onChange={handleInputChange}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                <input
+                  type="text"
+                  name="url"
+                  value={newBlog.url}
+                  onChange={handleInputChange}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="2">
+                <button className="submit" type="submit">
+                  Create
+                </button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </div>

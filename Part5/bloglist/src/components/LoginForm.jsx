@@ -17,33 +17,35 @@ const LoginForm = ({ handleLogin }) => {
       <h1 className="heading">Log in to the application</h1>
       <form onSubmit={onSubmit}>
         <table>
-          <tr>
-            <td>Username:</td>
-            <td>
-              <input
-                type="text"
-                value={username}
-                name="Username"
-                onChange={({ target }) => setUsername(target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Password:</td>
-            <td>
-              <input
-                type="password"
-                value={password}
-                name="Password"
-                onChange={({ target }) => setPassword(target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <button type="submit">Login</button>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Username:</td>
+              <td>
+                <input
+                  type="text"
+                  value={username}
+                  name="Username"
+                  onChange={({ target }) => setUsername(target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Password:</td>
+              <td>
+                <input
+                  type="password"
+                  value={password}
+                  name="Password"
+                  onChange={({ target }) => setPassword(target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="2">
+                <button type="submit">Login</button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </div>
