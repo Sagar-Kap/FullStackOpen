@@ -1,7 +1,9 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
+import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 import Blog from "./Blog";
+let component;
 
 test("Renders blog on the screen", () => {
   const blog = {
@@ -15,7 +17,7 @@ test("Renders blog on the screen", () => {
     username: "jhing",
   };
 
-  const component = render(<Blog blog={blog} />);
+  component = render(<Blog blog={blog} />);
 
   expect(component.container.querySelector(".blog")).toHaveTextContent(
     "Component gets rendered with this test"
@@ -27,4 +29,27 @@ test("Renders blog on the screen", () => {
   expect(component.container.querySelector(".blog")).not.toHaveTextContent(
     "787"
   );
+});
+
+test("Clicking the button shows other details", async () => {
+  const blog = {
+    title: "Component gets rendered with this test",
+    author: "Test1",
+    url: "test.com/test1",
+    likes: 787,
+    user: {
+      username: "jhing",
+    },
+    username: "jhing",
+  };
+
+  component = render(<Blog blog={blog} />);
+
+  const user = userEvent.setup();
+  const button = screen.getByText("Show");
+  await user.click(button);
+  expect(component.container.querySelector(".blog")).toHaveTextContent(
+    "test.com/test1"
+  );
+  expect(component.container.querySelector(".blog")).toHaveTextContent("787");
 });
