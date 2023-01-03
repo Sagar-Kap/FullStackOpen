@@ -30,4 +30,20 @@ describe("Blog app", function () {
       cy.get(".red").should("have.css", "color", "rgb(255, 0, 0)");
     });
   });
+
+  describe("When logged in", function () {
+    beforeEach(function () {
+      cy.login({ username: "lmao", password: "lamfatraja" });
+    });
+
+    it("a blog can be created", function () {
+      cy.contains("New Blog").click();
+      cy.get("#title").type("Sleep in the night");
+      cy.get("#author").type("Sleepless");
+      cy.get("#url").type("https://www.sleepless.com/");
+      cy.contains("Create").click();
+
+      cy.contains("Sleep in the night");
+    });
+  });
 });
