@@ -41,7 +41,7 @@ const App = () => {
       }, 2000);
     } catch (error) {
       setType("red");
-      setMessage("Wrong Credentials");
+      setMessage("Wrong Credentials!");
 
       setTimeout(() => {
         setMessage("");
