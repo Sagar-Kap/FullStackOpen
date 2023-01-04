@@ -1,3 +1,5 @@
+import { func } from "prop-types";
+
 describe("Blog app", function () {
   beforeEach(function () {
     cy.request("POST", "http://localhost:3003/api/testing/reset");
@@ -124,6 +126,52 @@ describe("Blog app", function () {
       cy.contains("Dusre Raja ne banaya hai")
         .parent()
         .should("not.contain", "Remove");
+    });
+
+    it("Blogs arranged in descending order based on like", function () {
+      cy.contains("First Hum").contains("Show").click();
+      cy.contains("First Hum")
+        .parent()
+        .find("button")
+        .contains("👍")
+        .click()
+        .wait(500)
+        .click()
+        .wait(500)
+        .click()
+        .wait(500)
+        .click()
+        .wait(500);
+      cy.contains("First Hum").contains("Hide").click();
+
+      cy.contains("Second Hum").contains("Show").click();
+      cy.contains("Second Hum")
+        .parent()
+        .find("button")
+        .contains("👍")
+        .click()
+        .wait(500)
+        .click()
+        .wait(500)
+        .click()
+        .wait(500);
+      cy.contains("Second Hum").contains("Hide").click();
+
+      cy.contains("Third Hum").contains("Show").click();
+      cy.contains("Third Hum")
+        .parent()
+        .find("button")
+        .contains("👍")
+        .click()
+        .wait(500)
+        .click()
+        .wait(500);
+      cy.contains("Third Hum").contains("Hide").click();
+
+      cy.get(".blog").eq(0).should("contain", "First Hum");
+      cy.get(".blog").eq(1).should("contain", "Second Hum");
+      cy.get(".blog").eq(2).should("contain", "Third Hum");
+      cy.get(".blog").eq(3).should("contain", "Dusre Raja ne banaya hai");
     });
   });
 });
