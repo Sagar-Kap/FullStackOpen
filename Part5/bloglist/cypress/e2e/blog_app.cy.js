@@ -46,4 +46,32 @@ describe("Blog app", function () {
       cy.contains("Sleep in the night");
     });
   });
+
+  describe("User can like a blog", function () {
+    beforeEach(function () {
+      cy.login({ username: "lmao", password: "lamfatraja" });
+      cy.createBlog({
+        title: "First Hum",
+        author: "Nikal Yaha",
+        url: "nikal.com/yahase",
+      });
+      cy.createBlog({
+        title: "Second Hum",
+        author: "Lolu",
+        url: "jamai.com",
+      });
+      cy.createBlog({
+        title: "Third Hum",
+        author: "Lmfao",
+        url: "chatpate.com/karare/blogs",
+      });
+    });
+
+    it("Like must register", function () {
+      cy.visit("http://localhost:3000/");
+      cy.contains("First Hum").contains("Show").click();
+      cy.contains("First Hum").parent().find("button").contains("👍").click();
+      cy.contains("First Hum").parent().get(".likes").contains("1");
+    });
+  });
 });

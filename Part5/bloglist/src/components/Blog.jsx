@@ -34,7 +34,7 @@ const Blog = ({ blog, updateLike, deleteBlog, username }) => {
         <div className="bottom-box">
           <div>Author: {blog.author}</div>
           <div>URL: {blog.url}</div>
-          <div>
+          <div className="likes">
             Likes: {blog.likes} <button onClick={handleLike}>👍</button>
           </div>
           <div>User: {blog.user.name}</div>
