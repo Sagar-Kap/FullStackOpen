@@ -74,4 +74,56 @@ describe("Blog app", function () {
       cy.contains("First Hum").parent().get(".likes").contains("1");
     });
   });
+
+  describe("Delete blog", function () {
+    beforeEach(function () {
+      const newUser = {
+        name: "Dusra Raja",
+        username: "Dusra",
+        password: "somethingIsWrong",
+      };
+      cy.createUser(newUser);
+      cy.login({ username: "Dusra", password: "somethingIsWrong" });
+      cy.createBlog({
+        title: "Dusre Raja ne banaya hai",
+        author: "Yamraj",
+        url: "yamraj.com",
+      });
+      cy.contains("Logout").click();
+      cy.login({ username: "lmao", password: "lamfatraja" });
+      cy.createBlog({
+        title: "First Hum",
+        author: "Nikal Yaha",
+        url: "nikal.com/yahase",
+      });
+      cy.createBlog({
+        title: "Second Hum",
+        author: "Lolu",
+        url: "jamai.com",
+      });
+      cy.createBlog({
+        title: "Third Hum",
+        author: "Lmfao",
+        url: "chatpate.com/karare/blogs",
+      });
+      cy.visit("http://localhost:3000/");
+    });
+
+    it("Delete blog by authorized user", function () {
+      cy.contains("First Hum").contains("Show").click();
+      cy.contains("First Hum")
+        .parent()
+        .find("button")
+        .contains("Remove")
+        .click();
+      cy.get("html").should("not.contain", "First Hum");
+    });
+
+    it("If not authorizes cannot delete", function () {
+      cy.contains("Dusre Raja ne banaya hai").contains("Show").click();
+      cy.contains("Dusre Raja ne banaya hai")
+        .parent()
+        .should("not.contain", "Remove");
+    });
+  });
 });
