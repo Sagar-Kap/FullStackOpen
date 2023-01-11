@@ -10,5 +10,6 @@ This will be the primary directory for all the exercises in this course. Each pa
 3. [Part3](/Part3/) - Programming a server with NodeJS and Express
 4. [Part4](/Part4/) - Testing Express servers, user administration
 5. [Part5](/Part5/) - Testing React apps
+6. [Part6](/Part6/) - State management with Redux
 
 ![Cat reading away calmly](/media/cat.gif)
