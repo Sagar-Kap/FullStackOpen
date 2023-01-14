@@ -5,3 +5,4 @@ This is the repo for part 6 of the course.
 The structure of the exercises are as follows:
 
 1. [Uni Cafe](./unicafe/) : Using redux to manage states in the unicafe app built in [Part1](../Part1/unicafe/).
+2. [Anecdotes](./anecdotes/) : Using redux to build upon the anecdotes app built in [Part1](../Part1/anecdotes/).
