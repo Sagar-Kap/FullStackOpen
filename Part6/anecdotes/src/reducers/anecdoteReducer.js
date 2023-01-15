@@ -32,6 +32,10 @@ const reducer = (state = initialState, action) => {
         votes: toUpdate.votes + 1,
       };
       return state.map((thing) => (thing.id !== id ? thing : updatedLikes));
+
+    case "MAKE_NEW_ENTRY":
+      return [...state, action.data];
+
     default:
       return state;
   }
@@ -41,6 +45,13 @@ export const toggleLikes = (id) => {
   return {
     type: "TOGGLE_LIKES",
     data: { id },
+  };
+};
+
+export const addNew = (content) => {
+  return {
+    type: "MAKE_NEW_ENTRY",
+    data: { content, id: getId(), votes: 0 },
   };
 };
 
