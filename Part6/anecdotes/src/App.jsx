@@ -1,15 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
-import { toggleLikes, addNew } from "./reducers/anecdoteReducer";
+import { useDispatch } from "react-redux";
+import { addNew } from "./reducers/anecdoteReducer";
+import AnecdoteList from "./components/AnecdoteList";
 
 const App = () => {
-  const anecdotes = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  const vote = (id) => {
-    dispatch(toggleLikes(id));
-    console.log("vote", id);
-  };
-
   const addNewAnecdote = (e) => {
     e.preventDefault();
     const content = e.target.anecdote.value;
@@ -17,20 +11,9 @@ const App = () => {
     dispatch(addNew(content));
   };
 
-  const sortedArray = anecdotes.sort((a, b) => b.votes - a.votes);
-
   return (
     <div>
-      <h2>Anecdotes</h2>
-      {sortedArray.map((anecdote) => (
-        <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
-          <div>
-            has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id)}>vote</button>
-          </div>
-        </div>
-      ))}
+      <AnecdoteList />
       <h2>create new</h2>
       <form onSubmit={addNewAnecdote}>
         <div>
