@@ -41,6 +41,8 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+//Action creators
+
 export const toggleLikes = (id) => {
   return {
     type: "TOGGLE_LIKES",
