@@ -1,5 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
-import { toggleLikes } from "../reducers/anecdoteReducer";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { voteAnecdote, initializeAnecdotes } from "../reducers/anecdoteReducer";
+import { orderBy } from "lodash";
+import { createNotification } from "../reducers/notificationReducer";
 
 const AnecdoteList = () => {
   const anecdotes = useSelector((state) =>
@@ -11,27 +14,26 @@ const AnecdoteList = () => {
   );
   const dispatch = useDispatch();
 
-  const vote = (id) => {
-    dispatch(toggleLikes(id));
-    console.log("vote", id);
+  useEffect(() => {
+    dispatch(initializeAnecdotes());
+  }, [dispatch]);
+
+  const handleVote = (anecdote) => {
+    dispatch(voteAnecdote(anecdote));
+    dispatch(createNotification(`You voted '${anecdote.content}'`, 5));
   };
 
-  const sortedArray = anecdotes.sort((a, b) => b.votes - a.votes);
+  const sortedAnecdotes = orderBy(anecdotes, ["votes"], ["desc"]);
 
-  return (
-    <div>
-      <h2>Anecdotes</h2>
-      {sortedArray.map((anecdote) => (
-        <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
-          <div>
-            has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id)}>vote</button>
-          </div>
-        </div>
-      ))}
+  return sortedAnecdotes.map((anecdote) => (
+    <div key={anecdote.id}>
+      <div>{anecdote.content}</div>
+      <div>
+        has {anecdote.votes}
+        <button onClick={() => handleVote(anecdote)}>vote</button>
+      </div>
     </div>
-  );
+  ));
 };
 
 export default AnecdoteList;
