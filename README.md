@@ -13,4 +13,8 @@ This will be the primary directory for all the exercises in this course. Each pa
 6. [Part6](/Part6/) - State management with Redux
 7. [Part7](/Part7/) - React router, custom hooks, styling app with CSS and webpack
 
+# FullStackOpen Certificate:
+
+![Full Stack Open Certificate](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/1ede2952f56307f430711c1288459c07)
+
 ![Cat reading away calmly](/media/cat.gif)
