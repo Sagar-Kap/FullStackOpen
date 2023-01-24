@@ -8,3 +8,19 @@ body {
   background-color: rgb(51, 83, 83);
   color: white;
 }
+
+a:link {
+  color: rgb(255, 0, 0);
+}
+
+a:visited {
+  color: rgb(5, 255, 5);
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
