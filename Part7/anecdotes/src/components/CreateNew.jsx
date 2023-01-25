@@ -3,9 +3,9 @@ import { useField } from "../hooks";
 
 const CreateNew = ({ addNew }) => {
   const navigate = useNavigate();
-  const content = useField("text");
-  const author = useField("text");
-  const info = useField("text");
+  const { reset: resetContent, ...content } = useField("text");
+  const { reset: resetAuthor, ...author } = useField("text");
+  const { reset: resetInfo, ...info } = useField("text");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +16,13 @@ const CreateNew = ({ addNew }) => {
       votes: 0,
     });
     navigate("/");
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    resetContent();
+    resetAuthor();
+    resetInfo();
   };
 
   return (
@@ -35,6 +42,7 @@ const CreateNew = ({ addNew }) => {
           <input {...info} />
         </div>
         <button>create</button>
+        <button onClick={handleReset}>Reset</button>
       </form>
     </div>
   );
