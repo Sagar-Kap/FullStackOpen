@@ -1,6 +1,6 @@
 const Country = ({ country }) => {
   if (!country) {
-    return <div>not found...</div>;
+    return <div>Not found...</div>;
   }
 
   return (
