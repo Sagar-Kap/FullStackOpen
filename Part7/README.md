@@ -7,3 +7,4 @@ The structure of the exercises are as follows:
 1. [Anecdote](./anecdotes/) : Using React router on apps built in earlier sections.
 2. [Countries](./countries/) : Using React hooks to improve upon the countries app built in [Part2](../Part2/countries/).
 3. [Notes](./notes/) : Using hooks to improve on the backend of the Notes project.
+4. [Blogs](./blogs/) : Configuring the blogs list to utilise Redux.
