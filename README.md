@@ -11,7 +11,8 @@ This will be the primary directory for all the exercises in this course. Each pa
 4. [Part4](/Part4/) - Testing Express servers, user administration
 5. [Part5](/Part5/) - Testing React apps
 6. [Part6](/Part6/) - State management with Redux
-7. [Part7](/Part7/) - React router, custom hooks, styling app with CSS and webpack
+7. [Part7](/Part7/) - React router, custom hooks, styling app with CSS and WebPack
+8. [Part8](/Part8/) - GraphQL
 
 # FullStackOpen Certificate:
 
