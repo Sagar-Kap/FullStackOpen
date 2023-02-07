@@ -1,0 +1,20 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Library Backend Using GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GraphQL",
+    "MERN",
+    "Stack"
+  ],
+  "author": "Sagar Kapoor",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.3.3",
+    "graphql": "^16.6.0"
+  }
+}
