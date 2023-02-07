@@ -4,7 +4,8 @@
   "description": "Library Backend Using GraphQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "GraphQL",
@@ -16,5 +17,8 @@
   "dependencies": {
     "@apollo/server": "^4.3.3",
     "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
