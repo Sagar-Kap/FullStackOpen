@@ -54,7 +54,8 @@ let books = [
     published: 2008,
     author: "Joshua Kerievsky",
     id: "afa5de01-344d-11e9-a414-719c6709cf3e",
-    genres: ["refactoring", "patterns"],
+
+    s: ["refactoring", "patterns"],
   },
   {
     title: "Practical Object-Oriented Design, An Agile Primer Using Ruby",
@@ -99,7 +100,7 @@ type Author {
   type Query {
     bookCount: Int!
     authorCount: Int!
-    allBooks(author: String): [Book!]
+    allBooks(author: String, genre: String): [Book]
     allAuthors: [Author!]
   }
 `;
@@ -109,8 +110,20 @@ const resolvers = {
     bookCount: () => books.length,
     authorCount: () => authors.length,
     allBooks: (root, args) => {
-      if (!args.author) return books;
-      return books.filter((book) => book.author === args.author);
+      let filteredBooks = books;
+      if (args.author) {
+        filteredBooks = filteredBooks.filter(
+          (book) => book.author === args.author
+        );
+        console.log(args.author);
+      }
+      if (args.genre) {
+        filteredBooks = filteredBooks.filter((book) => {
+          console.log(args.genre);
+          return book.genres.includes(args.genre);
+        });
+      }
+      return filteredBooks;
     },
     allAuthors: () => {
       return authors.map((author) => {
