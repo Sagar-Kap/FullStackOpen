@@ -54,8 +54,7 @@ let books = [
     published: 2008,
     author: "Joshua Kerievsky",
     id: "afa5de01-344d-11e9-a414-719c6709cf3e",
-
-    s: ["refactoring", "patterns"],
+    genres: ["refactoring", "patterns"],
   },
   {
     title: "Practical Object-Oriented Design, An Agile Primer Using Ruby",
