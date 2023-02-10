@@ -1,5 +1,7 @@
 const { ApolloServer } = require("@apollo/server");
 const { startStandaloneServer } = require("@apollo/server/standalone");
+const { v1: uuid } = require("uuid");
+const { GraphQLError } = require("graphql");
 
 let authors = [
   {
@@ -102,6 +104,23 @@ type Author {
     allBooks(author: String, genre: String): [Book]
     allAuthors: [Author!]
   }
+
+ type Mutation {
+  addBook(
+    title: String!
+    published: String!
+    author: String!
+    genres: [String]
+  ): Book
+
+addAuthor(
+  name: String!
+  born: String
+  bookCount: String!
+): Author
+
+ }
+
 `;
 
 const resolvers = {
@@ -114,11 +133,9 @@ const resolvers = {
         filteredBooks = filteredBooks.filter(
           (book) => book.author === args.author
         );
-        console.log(args.author);
       }
       if (args.genre) {
         filteredBooks = filteredBooks.filter((book) => {
-          console.log(args.genre);
           return book.genres.includes(args.genre);
         });
       }
@@ -131,6 +148,27 @@ const resolvers = {
         ).length;
         return { ...author, bookCount };
       });
+    },
+  },
+
+  Mutation: {
+    addBook: (root, args) => {
+      if (books.find((p) => p.title === args.title)) {
+        throw new GraphQLError("Title must be unique", {
+          extensions: {
+            code: "BAD_USER_INPUT",
+            invalidArgs: args.name,
+          },
+        });
+      }
+
+      const book = { ...args, id: uuid() };
+      books = books.concat(book);
+      if (!authors.find((p) => p.name === args.author)) {
+        authors.push({ name: args.author, born: null, bookCount: 1 });
+        console.log(authors);
+      }
+      return book;
     },
   },
 };

@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.3.3",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
