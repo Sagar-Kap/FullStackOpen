@@ -23,7 +23,7 @@ const ALL_PERSONS = gql`
 
 const App = () => {
   const [page, setPage] = useState("authors");
-  const result = useQuery(ALL_PERSONS);
+  const result = useQuery(ALL_PERSONS, { pollInterval: 2000 });
 
   if (result.loading) return <p>Loading...</p>;
   if (result.error) return <p>Error: {result.error.message}</p>;
@@ -33,13 +33,13 @@ const App = () => {
       <div>
         <div>
           <Link to="/authors">
-            <button onClick={() => setPage("authors")}>authors</button>
+            <button onClick={() => setPage("authors")}>Authors</button>
           </Link>
           <Link to="/books">
-            <button onClick={() => setPage("books")}>books</button>
+            <button onClick={() => setPage("books")}>Books</button>
           </Link>
           <Link to="/add">
-            <button onClick={() => setPage("add")}>add book</button>
+            <button onClick={() => setPage("add")}>Add Book</button>
           </Link>
         </div>
 
