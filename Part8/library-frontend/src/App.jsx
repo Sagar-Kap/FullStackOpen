@@ -13,12 +13,20 @@ const ALL_PERSONS = gql`
       born
       bookCount
     }
+    allBooks {
+      title
+      author
+      published
+    }
   }
 `;
 
 const App = () => {
   const [page, setPage] = useState("authors");
   const result = useQuery(ALL_PERSONS);
+
+  if (result.loading) return <p>Loading...</p>;
+  if (result.error) return <p>Error: {result.error.message}</p>;
 
   return (
     <Router>
@@ -46,7 +54,12 @@ const App = () => {
             }
           />
 
-          <Route path="books" element={<Books show={page === "books"} />} />
+          <Route
+            path="books"
+            element={
+              <Books show={page === "books"} books={result.data.allBooks} />
+            }
+          />
 
           <Route path="add" element={<NewBook show={page === "add"} />} />
         </Routes>
