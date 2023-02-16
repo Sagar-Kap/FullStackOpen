@@ -2,6 +2,7 @@ const typeDefs = require("./graphQL/schema");
 const resolvers = require("./graphQL/resolvers");
 const mongoose = require("mongoose");
 const config = require("./utils/config");
+const logger = require("./utils/logger");
 
 const { ApolloServer } = require("@apollo/server");
 const { startStandaloneServer } = require("@apollo/server/standalone");
@@ -9,10 +10,10 @@ const { startStandaloneServer } = require("@apollo/server/standalone");
 mongoose
   .connect(config.URL)
   .then(() => {
-    console.log("Successfully connected to Mongo DB!");
+    logger.info("Successfully connected to Mongo DB!");
   })
   .catch((error) => {
-    console.log("Error connecting to MongoDB: ", error.message);
+    logger.error("Error connecting to MongoDB: ", error.message);
   });
 
 const server = new ApolloServer({
@@ -23,5 +24,5 @@ const server = new ApolloServer({
 startStandaloneServer(server, {
   listen: { port: 4000 },
 }).then(({ url }) => {
-  console.log(`Server ready at ${url}`);
+  logger.info(`Server ready at ${url}`);
 });
