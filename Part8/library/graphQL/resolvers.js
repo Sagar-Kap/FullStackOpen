@@ -1,4 +1,3 @@
-const { v1: uuid } = require("uuid");
 const { GraphQLError } = require("graphql");
 const Book = require("../models/book");
 const Author = require("../models/author");
@@ -36,7 +35,8 @@ const resolvers = {
       const book = new Book({ ...args });
 
       try {
-        await book.save();
+        const savedBook = await book.save();
+        return savedBook;
       } catch (error) {
         throw new GraphQLError("Saving book failed", {
           extensions: {

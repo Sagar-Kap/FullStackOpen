@@ -4,7 +4,7 @@ const typeDefs = `
     author: String!
     published: Int!
     id: ID!
-    genres: [String!]
+   
   }
 
   type Author {

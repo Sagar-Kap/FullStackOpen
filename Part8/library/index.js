@@ -22,7 +22,7 @@ const server = new ApolloServer({
 });
 
 startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port: config.PORT },
 }).then(({ url }) => {
   logger.info(`Server ready at ${url}`);
 });
