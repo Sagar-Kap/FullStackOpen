@@ -7,6 +7,7 @@ const logger = require("./utils/logger");
 const { ApolloServer } = require("@apollo/server");
 const { startStandaloneServer } = require("@apollo/server/standalone");
 
+mongoose.set("strictQuery", false);
 mongoose
   .connect(config.URL)
   .then(() => {
