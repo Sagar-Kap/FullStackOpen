@@ -18,4 +18,6 @@ This will be the primary directory for all the exercises in this course. Each pa
 
 ![Full Stack Open Certificate](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/1ede2952f56307f430711c1288459c07)
 
+![GraphQL Certificate ](https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/70fd41bdceaf2e9218ef2b297ba3e050)
+
 ![Cat reading away calmly](/media/cat.gif)
