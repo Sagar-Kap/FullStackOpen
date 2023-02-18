@@ -1,32 +1,21 @@
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { UPDATE_AUTHOR, ALL_AUTHORS } from "../queries";
-import Select from "react-select";
+import { useQuery } from "@apollo/client";
+
+import { ALL_AUTHORS } from "../queries";
+
+import SetBirthyear from "./SetBirthyear";
 
 const Authors = (props) => {
-  const [setBornTo, setYear] = useState("");
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const [updateAuthor] = useMutation(UPDATE_AUTHOR, {
-    refetchQueries: [{ query: ALL_AUTHORS }],
-  });
+  const result = useQuery(ALL_AUTHORS);
 
   if (!props.show) {
     return null;
   }
 
-  const authors = props.authors;
-  let options = [];
-  authors.map((author) =>
-    options.push({ value: author.name, label: author.name })
-  );
+  if (result.loading) {
+    return <div>loading...</div>;
+  }
 
-  const submit = async (event) => {
-    event.preventDefault();
-    updateAuthor({ variables: { name: selectedOption.value, setBornTo } });
-    setSelectedOption(null);
-    setYear("");
-  };
+  const authors = result.data.allAuthors || [];
 
   return (
     <div>
@@ -35,8 +24,8 @@ const Authors = (props) => {
         <tbody>
           <tr>
             <th></th>
-            <th>Born</th>
-            <th>Books</th>
+            <th>born</th>
+            <th>books</th>
           </tr>
           {authors.map((a) => (
             <tr key={a.name}>
@@ -47,27 +36,10 @@ const Authors = (props) => {
           ))}
         </tbody>
       </table>
-      <h2>Set Birth Year</h2>
-      <form onSubmit={submit}>
-        <Select
-          defaultValue={null}
-          value={selectedOption}
-          onChange={setSelectedOption}
-          options={options}
-          placeholder="Select Author..."
-        />
-
-        <div>
-          Born
-          <input
-            required
-            type="number"
-            value={setBornTo}
-            onChange={({ target }) => setYear(Number(target.value))}
-          />
-        </div>
-        <button type="submit">Update Author</button>
-      </form>
+      <SetBirthyear
+        names={authors.map((a) => a.name)}
+        setError={props.setError}
+      />
     </div>
   );
 };
