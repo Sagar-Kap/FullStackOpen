@@ -1,0 +1,56 @@
+
+StatusCode        : 200
+StatusDescription : OK
+Content           :
+                    <!DOCTYPE html>
+                    <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+                    <head>
+                      <meta charset="utf-8" /><script type="text/javascript">(window.
+                    NREUM||(NREUM={})).init={privacy:{cookies_enabled:fa...
+RawContent        : HTTP/1.1 200 OK
+                    X-Drupal-Dynamic-Cache: MISS
+                    X-UA-Compatible: IE=edge
+                    Content-language: en
+                    X-Content-Type-Options: nosniff
+                    X-Frame-Options: SAMEORIGIN
+                    Permissions-Policy: interest-cohort=()
+                    X-D...
+Forms             :
+Headers           : {[X-Drupal-Dynamic-Cache, MISS], [X-UA-Compatible, IE=edge],
+                    [Content-language, en], [X-Content-Type-Options, nosniff]...}
+Images            : {}
+InputFields       : {}
+Links             : {@{outerHTML=<a href="#main-content" class="visually-hidden
+                    focusable">
+                          Skip to main content
+                      </a>; tagName=A; href=#main-content; class=visually-hidden
+                    focusable}, @{outerHTML=<a aria-current="News" href="/en/news"
+                    data-menu-link-id=0bda75ab91f8bad1d33de860414b7b17>
+                                      News
+                                    </a>; tagName=A; aria-current=News;
+                    href=/en/news;
+                    data-menu-link-id=0bda75ab91f8bad1d33de860414b7b17},
+                    @{outerHTML=<a class="hy-desktop-menu__panel-link"
+                    href=/en/news/news-and-press-releases target=_self>
+                                              <hy-icon icon='hy-icon-caret-right'
+                    size=10></hy-icon>
+                                              <span>
+                                                News and press releases
+                                                                          </span>
+                                            </a>; tagName=A;
+                    class=hy-desktop-menu__panel-link;
+                    href=/en/news/news-and-press-releases; target=_self},
+                    @{outerHTML=<a class="hy-desktop-menu__panel-link"
+                    href=/en/news/war-ukraine target=_self>
+                                              <hy-icon icon='hy-icon-caret-right'
+                    size=10></hy-icon>
+                                              <span>
+                                                War in Ukraine
+                                                                          </span>
+                                            </a>; tagName=A;
+                    class=hy-desktop-menu__panel-link; href=/en/news/war-ukraine;
+                    target=_self}...}
+ParsedHtml        :
+RawContentLength  : 723913
+
+
