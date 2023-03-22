@@ -1,0 +1,220 @@
+Script started on 2023-03-22 15:37:18+02:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="175" LINES="43"]
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ docker exec ^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^>^[[?2004l^MCONTAINER ID   IMAGE       COMMAND                  CREATED       STATUS       PORTS                                         NAMES
+601245aacd6e   mongo:4.0   "docker-entrypoint.s…"   8 hours ago   Up 8 hours   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ dockeer ^H^[[K^H^[[K^H^[[Kr exec todo-backend-mongo-1
+^[[?2004l^M"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ docker exec todo-backend-mongo-1 ^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K^H^[[K>^[[?2004l^M"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ docker exec -it todo-backend-mongo-1  ^H^[[Kbash
+^[[?2004l^Mroot@601245aacd6e:/# cle^H ^H^H ^H^H ^H^Gls
+bin  boot  data  dev  docker-entrypoint-initdb.d  etc  home  js-yaml.js  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@601245aacd6e:/# mongosh
+bash: mongosh: command not found
+root@601245aacd6e:/# mongoi^H ^Hsh
+bash: mongosh: command not found
+root@601245aacd6e:/# mongo
+MongoDB shell version v4.0.28
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c852cfaf-c9a8-4640-abda-5f995509b5ce") }
+MongoDB server version: 4.0.28
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+> show dbs^[[3G^[[Jshow dbs^[[11G
+> ^[[3G^[[J^[[3G
+> show db^[[3G^[[Jshow db^[[10G2023-03-22T13:43:18.895+0000 E QUERY    [js] Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1111:11
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> show dbs^[[3G^[[Jshow dbs^[[11G
+> use admnb^[[3G^[[Juse admn^[[11G^[[3G^[[Juse adm^[[10Gin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> shwo ^[[3G^[[Jshwo^[[7G^[[3G^[[Jshw^[[6G^[[3G^[[Jsh^[[5Gow dbs^[[3G^[[Jshow dbs^[[11G
+> exit^[[3G^[[Jexit^[[7G
+bye
+root@601245aacd6e:/# exit
+exit
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ docker exec -it todo-backend-mongo-1 bash^H^[[K^H^[[K^H^[[K^H^[[Kmongo^[[?2004l^MMongoDB shell version v4.0.28
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("967c67c5-caea-403b-aaa0-097bb348971d") }
+MongoDB server version: 4.0.28
+> show dbs^[[3G^[[Jshow dbs^[[11G
+> use admin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> use the_database^[[3G^[[Juse the_database^[[19G
+switched to db the_database
+> show tables^[[3G^[[Jshow tables^[[14G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> show collections^[[3G^[[Jshow collections^[[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> use admin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> db.system.users.find()^[[3G^[[Jdb.system.users.find()^[[25G
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "command find requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> use admin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> db,^[[3G^[[Jdb^[[5G,create^[[3G^[[Jdb,creat^[[11G^[[3G^[[Jdb,crea^[[10G^[[3G^[[Jdb,cre^[[9G^[[3G^[[Jdb,cr^[[8G^[[3G^[[Jdb,c^[[7G^[[3G^[[Jdb,^[[6G^[[3G^[[Jdb^[[5G.create^[[3>2023-03-22T15:18:32.448+0000 E QUERY    [js] Error: command usersInfo requires authentication :_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1
+@(shell):1:1
+> use admin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> db,^[[3G^[[Jdb^[[5G.system.yuse^[[3G^[[Jdb.system.yus^[[16G^[[3G^[[Jdb.system.yu^[[15G^[[3G^[[Jdb.system.y^[[14G^[[3G^[[Jdb.system.^[[13Gusers.find()^[[3G^[[Jdb.system.user>Error: error: {
+        "ok" : 0,
+        "errmsg" : "command find requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> show users^[[3G^[[Jshow users^[[13G
+2023-03-22T15:19:57.655+0000 E QUERY    [js] Error: command usersInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1
+shellHelper.show@src/mongo/shell/utils.js:859:9
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> show rilke^[[3G^[[Jshow rilk^[[12G^[[3G^[[Jshow ril^[[11G^[[3G^[[Jshow ri^[[10G^[[3G^[[Jshow r^[[9G^[[3G^[[Jshow ^[[8Groles^[[3G^[[Jshow roles^[[13G
+2023-03-22T15:20:26.959+0000 E QUERY    [js] Error: command rolesInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRoles@src/mongo/shell/db.js:1917:1
+shellHelper.show@src/mongo/shell/utils.js:864:9
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> ^[[3G^[[Jshow roles^[[13G^[[3G^[[Jshow roles^[[13G
+2023-03-22T15:20:30.352+0000 E QUERY    [js] Error: command rolesInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRoles@src/mongo/shell/db.js:1917:1
+shellHelper.show@src/mongo/shell/utils.js:864:9
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> use the_database^[[3G^[[Juse the_database^[[19G
+switched to db the_database
+> dn^[[3G^[[Jd^[[4Gb.getUsers()^[[3G^[[Jdb.getUsers()^[[16G
+2023-03-22T15:21:17.919+0000 E QUERY    [js] Error: command usersInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1@(shell):1:1
+> show users^[[3G^[[Jshow users^[[13G
+2023-03-22T15:21:22.977+0000 E QUERY    [js] Error: command usersInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1
+shellHelper.show@src/mongo/shell/utils.js:859:9
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> c;lea^[[3G^[[Jc;le^[[7G^[[3G^[[Jc;l^[[6G^[[3G^[[Jc;^[[5G^[[3G^[[Jc^[[4Gleare^[[3G^[[Jclear^[[8G^[[3G^[[Jclear^[[8G
+2023-03-22T15:21:27.077+0000 E QUERY    [js] ReferenceError: clear is not defined :
+@(shell):1:1
+> exit^[[3G^[[Jexit^[[7G
+bye
+^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ clear
+^[[?2004l^M^[[H^[[2J^[[3J^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ clear^H^H^H^H^Hdocker exec -it todo-backend->^[[?2004l^MMongoDB shell version v4.0.28
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7409437f-c58d-4f73-bd25-2f4e496ee8d2") }
+MongoDB server version: 4.0.28
+> db^[[3G^[[Jdb^[[5G
+test
+> show db^[[3G^[[Jshow db^[[10G
+2023-03-22T15:23:23.070+0000 E QUERY    [js] Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1111:11
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> ^[[3G^[[Jshow db^[[10Gs^[[3G^[[Jshow dbs^[[11G
+> show collections^[[3G^[[Jshow collections^[[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> ^[[3G^[[Jshow collections^[[19G^[[3G^[[Jshow dbs^[[11G^[[3G^[[Jshow db^[[10G^[[3G^[[Jdb^[[5G^[[3G^[[Jclear^[[8G^[[3G^[[Jshow users^[[13G^[[3G^[[Jdb.getUsers()^[[16G^[[3G^[[>switched to db the_database
+> db^[[3G^[[Jd^[[4Gb.too^[[3G^[[Jdb.to^[[8Gdos.find({})^[[3G^[[Jdb.todos.find({})^[[20G
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "command find requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> db.getUsers(0^[[3G^[[Jdb.getUsers(^[[15G)^[[3G^[[Jdb.getUsers()^[[16G2023-03-22T15:28:17.592+0000 E QUERY    [js] Error: command usersInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1
+@(shell):1:1
+> ^[[3G^[[Jdb.getUsers()^[[16G^[[3G^[[Jdb.todos.find({})^[[20G^[[3G^[[Juse the_database^[[19G^[[3G^[[Juse the_database^[[19G
+switched to db the_database
+> ^[[3G^[[Juse the_database^[[19G^[[3G^[[Jdb.getUsers()^[[16G^[[3G^[[Jdb.getUsers()^[[16G
+2023-03-22T15:28:25.795+0000 E QUERY    [js] Error: command usersInfo requires authentication :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1785:1
+@(shell):1:1
+> use admin^[[3G^[[Juse admin^[[12G
+switched to db admin
+> so^[[3G^[[Js^[[4Ghow dbs^[[3G^[[Jshow dbs^[[11G
+> --help^[[3G^[[J--help^[[9G
+NaN
+> show --help^[[3G^[[Jshow --help^[[14G
+2023-03-22T15:31:24.990+0000 E QUERY    [js] Error: don't know how to show [--help] :
+shellHelper.show@src/mongo/shell/utils.js:1111:11
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> hel[p^[[3G^[[Jhel[^[[7G^[[3G^[[Jhel^[[6Gp^[[3G^[[Jhelp^[[7G
+        db.help()                    help on db methods
+        db.mycoll.help()             help on collection methods
+        sh.help()                    sharding helpers
+        rs.help()                    replica set helpers
+        help admin                   administrative help
+        help connect                 connecting to a db help
+        help keys                    key shortcuts
+        help misc                    misc things to know
+        help mr                      mapreduce
+
+        show dbs                     show database names
+        show collections             show collections in current database
+        show users                   show users in current database
+        show profile                 show most recent system.profile entries with time >= 1ms
+        show logs                    show the accessible logger names
+        show log [name]              prints out the last segment of log in memory, 'global' is default
+        use <db_name>                set current database        db.foo.find()                list objects in collection foo
+        db.foo.find( { a : 1 } )     list objects in foo where a == 1
+        it                           result of the last line evaluated; use to further iterate
+        DBQuery.shellBatchSize = x   set default number of items to display on shell
+        exit                         quit the mongo shell
+> shopw^[[3G^[[Jshop^[[7G^[[3G^[[Jsho^[[6Gw profil;^[[3G^[[Jshow profil^[[14Ge^[[3G^[[Jshow profile^[[15G
+2023-03-22T15:32:12.130+0000 E QUERY    [js] Error: count failed: {
+        "ok" : 0,
+        "errmsg" : "command count requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+} :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DBQuery.prototype.count@src/mongo/shell/query.js:383:11
+DBCollection.prototype.count@src/mongo/shell/collection.js:1464:12
+shellHelper.show@src/mongo/shell/utils.js:822:13
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> show logs^[[3G^[[Jshow logs^[[12G
+Error while trying to show logs: command getLog requires authentication
+> ^[[3G^[[J^[[3G
+> ^[[3G^[[Jshow logs^[[12G^[[3G^[[Jshow profile^[[15G^[[3G^[[Jhelp^[[7G^[[3G^[[Jshow --help^[[14G^[[3G^[[J--help^[[9G^[[3G^[[Jshow dbs^[[11G^[[3G^[[Jshow db^[[10G^[[3G^[[Jsho>switched to db the_database
+> db.auth(''^[[3G^[[Jdb.auth(''^[[12G^[[3G^[[Jdb.auth('t'^[[13G^[[3G^[[Jdb.auth('th'^[[14G^[[3G^[[Jdb.auth('thg'^[[15G^[[3G^[[Jdb.auth('thge'^[[16G^[[3G^[[Jdb.auth('thg'^[[15>2023-03-22T15:40:59.354+0000 E QUERY    [js] SyntaxError: unterminated string literal @(shell):1:39
+> ^[[3G^[[Juse the_database^[[19G^[[3G^[[J^[[3Gdb.auth('the_username', 'the_password')^[[3G^[[Jdb.auth('the_username', 'the_password')^[[42G
+1
+> db.^[[3G^[[Jdb^[[5G^[[3G^[[Jd^[[4G^[[3G^[[J^[[3G^[[3G^[[Juse the_database^[[19G^[[3G^[[Jshow logs^[[12G^[[3G^[[Jshow profile^[[15G^[[3G^[[Jhelp^[[7G^[[3G^[[Jshow --help^[[1>the_database  0.000GB
+> ^[[3G^[[Jshow dbs^[[11G^[[3G^[[Juse the_database^[[19G^[[3G^[[Jshow logs^[[12G^[[3G^[[Jshow profile^[[15G^[[3G^[[Jhelp^[[7G^[[3G^[[Jshow profile^[[15G^[[3G^[[Jhelp^[[7G^[[3>2023-03-22T15:43:02.032+0000 E QUERY    [js] TypeError: db.tofind is not a function :
+@(shell):1:1
+> db.todos.find()^[[3G^[[Jdb.todos.find()^[[18G
+{ "_id" : ObjectId("641a906fe59d4edce55815b3"), "text" : "Whatever you wanna do", "done" : true }
+{ "_id" : ObjectId("641a906fe59d4edce55815b4"), "text" : "Learn about containers", "done" : false }
+> db.todos.insert({}^[[3G^[[Jdb.todos.insert(^[[1;34m{^[[0m}^[[20G^[[3G^[[Jdb.todos.insert(^[[1;34m{^[[0m"}^[[21G^[[3G^[[Jdb.todos.insert(^[[1;34m{^[[0m""}^[[22G^[[3G^[[Jdb.t>WriteResult({ "nInserted" : 1 })
+> exit^[[3G^[[Jexit^[[7G
+bye^[[?2004h^[]0;pi@ras: ~/Projects/containers^G^[[01;32mpi@ras^[[00m:^[[01;34m~/Projects/containers^[[00m$ exit
+^[[?2004l^Mexit
+
+Script done on 2023-03-22 17:46:24+02:00 [COMMAND_EXIT_CODE="0"]
