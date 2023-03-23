@@ -1,0 +1,565 @@
+Script started on 2023-03-23 16:13:00+02:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="86" LINES="42"]
+[?2004h]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ y[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ y[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ ls[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd containers/todo-app/todo-backend/[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [Clear[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd containers/todo-app/todo-backend/[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [Clear[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd containers/todo-app/todo-backend/[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [C[C[CProjects/[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cwcontainers/todo-app/todo-backend/[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [Clear[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd containers/todo-app/todo-backend/[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ ls[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ y[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdop[K[Kc[Koce[Kker exec --it [7mtodo-backend-redi[27m[7ms[27m[7m-1[27m[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctodo-backend-redis-1 bash
+[?2004l
+unknown flag: --it
+See 'docker exec --help'.
+[?2004h]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ docker exec --it todo-backend-redis-1 bash
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cit todo-backend-redis-[1P[A
+]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C
+
+
+[?2004l
+[?2004hroot@da690bf2ec11:/data# ls
+[?2004l
+dump.rdb
+[?2004hroot@da690bf2ec11:/data# cd    redis-cli
+[?2004l
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> k
+[17C
+[0K127.0.0.1:6379> ke
+[18C
+[0K127.0.0.1:6379> key
+[19C
+[0K127.0.0.1:6379> keys[0;90;49m pattern[0m
+[20C
+[0K127.0.0.1:6379> keys [0;90;49mpattern[0m
+[21C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> keys *
+[22C
+1) "todocounter"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> g
+[17C
+[0K127.0.0.1:6379> ge
+[18C
+[0K127.0.0.1:6379> get[0;90;49m key[0m
+[19C
+[0K127.0.0.1:6379> get [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> get 
+[20C
+(error) ERR wrong number of arguments for 'get' command
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> get [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> get t[0;90;49m [0m
+[21C
+[0K127.0.0.1:6379> get to[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> get tod[0;90;49m [0m
+[23C
+[0K127.0.0.1:6379> get todf[0;90;49m [0m
+[24C
+[0K127.0.0.1:6379> get tod[0;90;49m [0m
+[23C
+[0K127.0.0.1:6379> get todo[0;90;49m [0m
+[24C
+[0K127.0.0.1:6379> get todop[0;90;49m [0m
+[25C
+[0K127.0.0.1:6379> get todo[0;90;49m [0m
+[24C
+[0K127.0.0.1:6379> get todoc[0;90;49m [0m
+[25C
+[0K127.0.0.1:6379> get todoco[0;90;49m [0m
+[26C
+[0K127.0.0.1:6379> get todocou[0;90;49m [0m
+[27C
+[0K127.0.0.1:6379> get todocoun[0;90;49m [0m
+[28C
+[0K127.0.0.1:6379> get todocount[0;90;49m [0m
+[29C
+[0K127.0.0.1:6379> get todocounte[0;90;49m [0m
+[30C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter
+[31C
+"4"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> s
+[17C
+[0K127.0.0.1:6379> se
+[18C
+[0K127.0.0.1:6379> set[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time[0m
+[19C
+[0K127.0.0.1:6379> set [0;90;49mkey value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time[0m
+[20C
+[0K127.0.0.1:6379> set t[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-s[0m
+[21C
+[0K127.0.0.1:6379> set to[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-[0m
+[22C
+[0K127.0.0.1:6379> set top[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time[0m
+[23C
+[0K127.0.0.1:6379> set topd[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-tim[0m
+[24C
+[0K127.0.0.1:6379> set topdo[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-ti[0m
+[25C
+[0K127.0.0.1:6379> set topdoc[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-t[0m
+[26C
+[0K127.0.0.1:6379> set topdoco[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-[0m
+[27C
+[0K127.0.0.1:6379> set topdocou[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix[0m
+[28C
+[0K127.0.0.1:6379> set topdocoun[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT uni[0m
+[29C
+[0K127.0.0.1:6379> set topdocount[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[30C
+[0K127.0.0.1:6379> set topdocounte[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[31C
+[0K127.0.0.1:6379> set topdocounter[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT [0m
+[32C
+[0K127.0.0.1:6379> set topdocounter [0;90;49mvalue [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT [0m
+[33C
+[0K127.0.0.1:6379> set topdocounter 9[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix[0m
+[34C
+[0K127.0.0.1:6379> set topdocounter 90[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT uni[0m
+[35C
+[0K127.0.0.1:6379> set topdocounter 900[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> set topdocounter 9001
+[37C
+OK
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter
+[31C
+"4"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[38C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[37C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[36C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[35C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[34C
+[0K127.0.0.1:6379> set topdocounter 9001"
+[33C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[34C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> set topdocounter "9001"
+[39C
+OK
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[35C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[34C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[33C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[32C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[31C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[30C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[29C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[28C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[27C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[26C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[25C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[24C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[23C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[22C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[23C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[22C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[23C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[24C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[25C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[26C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[27C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[28C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[29C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[30C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[31C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[32C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[33C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[34C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[35C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set todocounter 9001
+[36C
+OK
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter
+[31C
+"9001"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> d
+[17C
+[0K127.0.0.1:6379> de
+[18C
+[0K127.0.0.1:6379> del[0;90;49m key [key ...][0m
+[19C
+[0K127.0.0.1:6379> del [0;90;49mkey [key ...][0m
+[20C
+[0K127.0.0.1:6379> del t[0;90;49m [key ...][0m
+[21C
+[0K127.0.0.1:6379> del to[0;90;49m [key ...][0m
+[22C
+[0K127.0.0.1:6379> del tof[0;90;49m [key ...][0m
+[23C
+[0K127.0.0.1:6379> del tofd[0;90;49m [key ...][0m
+[24C
+[0K127.0.0.1:6379> del tof[0;90;49m [key ...][0m
+[23C
+[0K127.0.0.1:6379> del to[0;90;49m [key ...][0m
+[22C
+[0K127.0.0.1:6379> del tod[0;90;49m [key ...][0m
+[23C
+[0K127.0.0.1:6379> del todo[0;90;49m [key ...][0m
+[24C
+[0K127.0.0.1:6379> del todoc[0;90;49m [key ...][0m
+[25C
+[0K127.0.0.1:6379> del todoco[0;90;49m [key ...][0m
+[26C
+[0K127.0.0.1:6379> del todocou[0;90;49m [key ...][0m
+[27C
+[0K127.0.0.1:6379> del todocoun[0;90;49m [key ...][0m
+[28C
+[0K127.0.0.1:6379> del todocount[0;90;49m [key ...][0m
+[29C
+[0K127.0.0.1:6379> del todocounte[0;90;49m [key ...][0m
+[30C
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del todocounter
+[31C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> s
+[17C
+[0K127.0.0.1:6379> sj
+[18C
+[0K127.0.0.1:6379> sjo
+[19C
+[0K127.0.0.1:6379> sjop
+[20C
+[0K127.0.0.1:6379> sjopw
+[21C
+[0K127.0.0.1:6379> sjop
+[20C
+[0K127.0.0.1:6379> sjo
+[19C
+[0K127.0.0.1:6379> sj
+[18C
+[0K127.0.0.1:6379> s
+[17C
+[0K127.0.0.1:6379> 
+[16C
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> exit
+[20C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> get [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> exit
+[20C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> keys *
+[22C
+1) "topdocounter"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> d
+[17C
+[0K127.0.0.1:6379> de
+[18C
+[0K127.0.0.1:6379> del[0;90;49m key [key ...][0m
+[19C
+[0K127.0.0.1:6379> del [0;90;49mkey [key ...][0m
+[20C
+[0K127.0.0.1:6379> del t[0;90;49m [key ...][0m
+[21C
+[0K127.0.0.1:6379> del to[0;90;49m [key ...][0m
+[22C
+[0K127.0.0.1:6379> del top[0;90;49m [key ...][0m
+[23C
+[0K127.0.0.1:6379> del topd[0;90;49m [key ...][0m
+[24C
+[0K127.0.0.1:6379> del topdo[0;90;49m [key ...][0m
+[25C
+[0K127.0.0.1:6379> del topdoc[0;90;49m [key ...][0m
+[26C
+[0K127.0.0.1:6379> del topdoco[0;90;49m [key ...][0m
+[27C
+[0K127.0.0.1:6379> del topdocou[0;90;49m [key ...][0m
+[28C
+[0K127.0.0.1:6379> del topdocoun[0;90;49m [key ...][0m
+[29C
+[0K127.0.0.1:6379> del topdocount[0;90;49m [key ...][0m
+[30C
+[0K127.0.0.1:6379> del topdocounte[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> del topdocounter
+[32C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> keys *
+[22C
+1) "todocounter"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> set todocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m
+[36C
+[0K127.0.0.1:6379> set topdocounter "9001"[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m
+[39C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> set topdocounter 9001[0;90;49m [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m
+[37C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[30C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[29C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[28C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[27C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[26C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[25C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter
+[31C
+"NaN"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> del topdocounter
+[32C
+(integer) 0
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> keys *
+[22C
+1) "todocounter"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> get todocounter
+[31C
+"9"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> get todocounter[0;90;49m [0m
+[31C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> keys *[0;90;49m [0m
+[22C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[32C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[30C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[29C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[28C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[27C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[26C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[25C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[24C
+[0K127.0.0.1:6379> del topdocounter[0;90;49m [key ...][0m
+[23C
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[22C
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del todocounter
+[31C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del todocounter
+[31C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> del todocounter[0;90;49m [key ...][0m
+[31C
+[0K127.0.0.1:6379> del todocounter
+[31C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> e
+[17C
+[0K127.0.0.1:6379> ex
+[18C
+[0K127.0.0.1:6379> exi
+[19C
+[0K127.0.0.1:6379> exit
+[20C
+[0K127.0.0.1:6379> exit
+[20C
+[?2004hroot@da690bf2ec11:/data# exit
+[?2004l
+exit
+[?2004h]0;pi@ras: ~/Projects/containers/todo-app/todo-backend[01;32mpi@ras[00m:[01;34m~/Projects/containers/todo-app/todo-backend[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-03-23 16:48:32+02:00 [COMMAND_EXIT_CODE="0"]
