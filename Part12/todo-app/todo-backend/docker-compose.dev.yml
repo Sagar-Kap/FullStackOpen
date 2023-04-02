@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mongo:
@@ -16,6 +16,19 @@ services:
     image: redis
     ports:
       - 6379:6379
-    command: ['redis-server', '--appendonly', 'yes']
-    volumes: 
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
       - ./redis_data:/data
+
+  server:
+    image: todo-backend
+    volumes:
+      - ./:/usr/src/app
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database

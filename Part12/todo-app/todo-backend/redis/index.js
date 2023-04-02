@@ -1,6 +1,7 @@
+require("dotenv").config();
 const redis = require("redis");
 const { promisify } = require("util");
-const REDIS_URL = "redis://localhost:6379";
+const REDIS_URL = process.env.REDIS_URL;
 const { Todo } = require("../mongo");
 
 let getAsync;
