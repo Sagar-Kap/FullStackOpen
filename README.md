@@ -13,7 +13,7 @@ This will be the primary directory for all the exercises in this course. Each pa
 6. [Part6](/Part6/) - State management with Redux
 7. [Part7](/Part7/) - React router, custom hooks, styling app with CSS and WebPack
 8. [Part8](/Part8/) - GraphQL
-9. [Part12](/Part12/) - Containers
+9. [Part12]("/Part12/") - Containers
 
 # FullStackOpen Certificate:
 
